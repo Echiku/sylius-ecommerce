@@ -1,0 +1,429 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+
+ <div>
+
+    <div class="ui hidden divider"></div>
+    <div class="ui two column stackable grid">
+        <div class="column">
+            <h1 class="ui header">
+            <i class="circular cart icon"></i>
+            <div class="content">
+            Your shopping cart
+                    <div class="sub header">Edit your items, apply coupon or proceed to the checkout</div>
+                </div>
+    </h1>
+    
+        </div>
+        <div class="middle aligned column">
+            <form method="post" action="/produits/">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_csrf_token" value="798df8b.xuSv_j5nLSXncSNFAutN2UMTPt-anoLdevZxDjGCKq0.hL6XiVQsW1eJPmh2NrgA7Bp4eJbZ7rC5DpkpZQHpYtS1g-qEByBOYdALSA">
+                <button type="submit" id="sylius-cart-clear" class="ui right floated basic red button">
+                    <i class="icon remove"></i> Clear cart
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="ui stackable grid">
+        <div class="eleven wide column">
+            <!-- BEGIN EVENT | event name: "sylius.shop.cart.items" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.items", block name: "before_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.items", block name: "before_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.items", block name: "content", template: "@SyliusShop/Cart/Summary/_items.html.twig", priority: 10 -->
+<div class="ui segment">
+<form name="sylius_cart" method="post" action="/fr_FR/cart/" class="ui loadable form" novalidate="novalidate" id="sylius_cart">
+
+<input type="hidden" name="_method" value="PATCH">
+<input type="hidden" id="sylius_cart__token" name="sylius_cart[_token]" value="05df546da1f49d8b5eda14.lcytVg6d90aiARjC7pVFr9iWySIjBUZfZDR94ewW0FM.pfvqPkjLkQzbRnn72v8Oxo34jmN3YwczEkMFzIoltWP8o8cESvmhdMw5bw">
+</form>
+
+<!-- BEGIN EVENT | event name: "sylius.shop.cart.summary.items" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary.items", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary.items", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.cart.summary.items" -->
+
+<table id="sylius-cart-items" class="ui very basic celled table">
+    <thead>
+    <tr>
+        <th>Item</th>
+        <th>Unit price</th>
+        <th>Qty</th>
+        <th></th>
+        <th class="right aligned">Total</th>
+    </tr>
+    </thead>
+    <tbody>
+                
+
+<tr>
+<td class="single line">
+    
+<div class="ui header">
+            
+<img id="im-p" src="https://127.0.0.1:8000/media/cache/resolve/sylius_shop_product_tiny_thumbnail/45/94/0f28db462f169545cb2ee5822eed.jpg" alt="Knitted wool-blend green cap" class="ui bordered image">
+    <div class="content">
+    <a href="/fr_FR/products/knitted-wool-blend-green-cap">
+        <div class="sylius-product-name" id="nomp">Knitted wool-blend green cap</div>
+        <span class="sub header sylius-product-variant-code" id="s-nomp">
+            Knitted_wool_blend_green_cap-variant-0
+        </span>
+    </a>
+</div>
+</div>
+<div class="ui horizontal divided list">
+    <div class="item sylius-product-variant-name">
+        
+    </div>
+</div>
+</td>
+<td class="right aligned">
+            <span class="sylius-unit-price" id="unit">$56.11</span>
+</td>
+<td class="center aligned">
+    <span class="sylius-quantity ui form"><input type="number" id="sylius_cart_items_0_quantity" name="sylius_cart[items][0][quantity]" required="required" min="1" form="sylius_cart" value="2" onclick="getValue()"></span>
+</td>
+<td class="center aligned">
+    <form action="/fr_FR/cart/75/remove" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_csrf_token" value="973b4c.ZRExMghSP5P-WRmYsQra3VOliLbq-voGYkWyawnvskc.DX9kWzogVsS2BlX5y0eApxzPv9rcu85EMXXwDm-V6Co1X1MFXhxp17cKWA">
+        <button type="submit" class="ui circular icon button sylius-cart-remove-button"><i class="remove icon"></i></button>
+    </form>
+</td>
+<td class="right aligned">
+    <span class="sylius-total" id="s-total">$112.22</span>
+</td>
+</tr>
+            </tbody>
+</table>
+        <div class="ui hidden divider"></div>
+
+    <!-- BEGIN EVENT | event name: "sylius.shop.cart.coupon" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.coupon", block name: "before_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.coupon", block name: "before_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.coupon", block name: "content", template: "@SyliusShop/Cart/Summary/_coupon.html.twig", priority: 10 -->
+<div id="sylius-coupon">
+<div class="ui coupon action input">
+    <input type="text" id="sylius_cart_promotionCoupon" name="sylius_cart[promotionCoupon]" form="sylius_cart" placeholder="Enter your code...">
+    <button type="submit" id="sylius-save" class="ui teal icon labeled button" form="sylius_cart"><i class="ticket icon"></i> Apply coupon</button>
+</div>
+<br>
+
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.cart.coupon", block name: "content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.coupon", block name: "after_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.coupon", block name: "after_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.cart.coupon" -->
+
+    <div class="ui hidden divider"></div>
+<button type="submit" class="ui icon labeled large button" id="sylius-cart-update" form="sylius_cart"><i class="save icon"></i> Update cart</button>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.cart.items", block name: "content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.items", block name: "after_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.items", block name: "after_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.cart.items" -->
+        </div>
+        <div class="five wide column">
+            <!-- BEGIN EVENT | event name: "sylius.shop.cart.summary" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary", block name: "before_totals_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary", block name: "before_totals_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary", block name: "totals", template: "@SyliusShop/Cart/Summary/_totals.html.twig", priority: 20 -->
+
+
+<div class="ui segment">
+<h2 class="ui dividing header">Summary</h2>
+
+<!-- BEGIN EVENT | event name: "sylius.shop.cart.summary.totals" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary.totals", block name: "totals_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary.totals", block name: "totals_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.cart.summary.totals" -->
+
+<table class="ui very basic table">
+    <tbody>
+    <tr>
+        <td>Items total:</td>
+        <td class="right aligned" id="d-total">$112.22</td>
+    </tr>
+                        <tr>
+            <td>Estimated shipping cost:</td>
+            <td class="right aligned">
+                                    <span id="sylius-cart-shipping-total" >$1.42</span>
+            </td>
+        </tr>
+            <tr class="tax-disabled">
+        <td>Taxes total:</td>
+        <td class="right aligned">
+                                                                <div class="tax-disabled">
+                    <small>(Included in price)</small>
+                    <span id="sylius-cart-tax-included">$18.70</span>
+                </div>
+                        </td>
+    </tr>
+    <tr class="ui large header">
+        <td>Order total:</td>
+        <td id="sylius-cart-grand-total" class="right aligned">$113.64</td>
+    </tr>
+            </tbody>
+</table>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary", block name: "totals" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary", block name: "after_totals_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary", block name: "after_totals_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary", block name: "checkout", template: "@SyliusShop/Cart/Summary/_checkout.html.twig", priority: 10 -->
+
+<button type="submit" name="submit-type" value="checkout" class="ui huge primary fluid labeled icon button"  id="sendButton">
+<i class="check icon"></i> Checkout
+</button>
+
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary", block name: "checkout" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.cart.summary", block name: "pay_with_pay_pal", template: "@SyliusPayPalPlugin/Buttons/cart.html.twig", priority: 7 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.cart.summary", block name: "pay_with_pay_pal" -->
+<!-- END EVENT | event name: "sylius.shop.cart.summary" -->
+        </div>
+    </div>
+
+    
+ </div>
+
+
+ <script>
+
+    var urlParams = new URLSearchParams(window.location.search);
+
+    var datas = urlParams.get('data');
+    
+    var jsonStr=JSON.parse(datas);
+     
+    var itemsTotal=jsonStr.itemsTotal
+
+    var estimationCost=jsonStr.estimationCost
+
+    var taxes=jsonStr.taxes
+
+    var orderTotal=jsonStr.orderTotal
+
+    var imagePath=jsonStr.imagePath
+
+    var quantiteProduit=jsonStr.quantiteP
+
+    var nomP=jsonStr.nomP
+
+    var prix=jsonStr.prix
+
+
+    var currentURL = window.location.origin;
+
+
+    console.log(window.location.origin,'tl');
+
+
+    document.getElementById('nomp').textContent=nomP
+
+    document.getElementById('s-nomp').textContent=nomP
+
+    document.getElementById('unit').textContent="$"+prix
+
+    document.getElementById('sylius_cart_items_0_quantity').value=quantiteProduit
+
+
+    document.getElementById('s-total').textContent="$"+itemsTotal
+
+    document.getElementById('d-total').textContent="$"+itemsTotal
+
+
+    document.getElementById('sylius-cart-shipping-total').textContent="$"+estimationCost
+
+    document.getElementById('sylius-cart-tax-included').textContent="$"+taxes
+
+    document.getElementById('sylius-cart-grand-total').textContent="$"+orderTotal
+
+
+    document.getElementById('sylius-cart-total').textContent="$"+orderTotal
+
+    
+
+    document.getElementById('im-p').src=currentURL+'/media/image/'+imagePath;
+
+
+   
+    function getValue()
+         {
+             var numberChange= document.getElementById('sylius_cart_items_0_quantity').value
+
+             var units=document.getElementById('unit').textContent
+
+             var result=numberChange*units.replace('$','') 
+              
+              result.toFixed(2)
+
+             document.getElementById('s-total').textContent="$"+ result
+
+             document.getElementById('d-total').textContent="$"+result
+
+             var shipping=(document.getElementById('sylius-cart-shipping-total').textContent).replace('$','')
+
+            
+
+             var taxesP= (document.getElementById('sylius-cart-tax-included').textContent).replace('$','')
+
+            console.log(shipping,taxesP)
+
+            var orderTotals= result+ parseInt(shipping)+parseInt(taxesP)
+
+             
+
+             
+
+
+             document.getElementById('sylius-cart-total').textContent="$"+orderTotals
+
+             document.getElementById('sylius-cart-grand-total').textContent="$"+orderTotals
+
+
+
+
+
+
+         }
+
+  /*  var sendButton=document.getElementById('navigateButton')
+
+      sendButton.addEventListener("click", function () {
+          
+   // Replace with your desired URL
+   
+
+
+
+         var order = {
+        'itemT':  document.getElementById('d-total').textContent,
+        'nomP':   document.getElementById('nomp').textContent,
+        'quantiteP': document.getElementById('sylius_cart_items_0_quantity').value,
+        'taxes': document.getElementById('sylius-cart-tax-included').textContent,
+        'est_ship': document.getElementById('sylius-cart-shipping-total').textContent,
+        'orderT': document.getElementById('sylius-cart-total').textContent,
+        'imagePath':document.getElementById('im-p').src
+        };
+
+              var datas=JSON.stringify(order)
+
+          //   var newURL = currentURL +'/checkout-cmd/'+$datas; // Remplacez par l'URL souhaitée
+       // console.log(order,'ordersss')
+
+        fetch('/createOrder/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(order),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(JSON.stringify(data),'hereSH');
+            // Handle the response
+            var datas=JSON.stringify(data)
+
+           // var newURL = currentURL +'/checkout-cmd'; // Remplacez par l'URL souhaitée
+     
+           // history.replaceState(null, null, newURL);
+
+
+          // window.location.href = newURL 
+
+
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle errors
+        });
+     
+        
+    })
+*/
+
+const sendButton = document.getElementById("sendButton");
+
+// Add a click event listener to the button
+sendButton.addEventListener("click", function () {
+    var datas = {
+        'itemT':  document.getElementById('d-total').textContent,
+        'nomP':   document.getElementById('nomp').textContent,
+        'quantiteP': document.getElementById('sylius_cart_items_0_quantity').value,
+        'taxes': document.getElementById('sylius-cart-tax-included').textContent,
+        'est_ship': document.getElementById('sylius-cart-shipping-total').textContent,
+        'orderT': document.getElementById('sylius-cart-total').textContent,
+        'imagePath':document.getElementById('im-p').src
+        };
+
+    window.location.href = '/checkout-cmd?data=' + encodeURIComponent(JSON.stringify(datas));
+
+});
+
+
+
+/* Utilisez history.replaceState() pour remplacer l'URL actuelle
+history.replaceState(null, null, newURL);
+
+console.log(newURL)
+
+
+   
+    
+/*
+function goNext()
+{
+    document.getElementById('navigateButton').addEventListener('click', function () {
+   // Replace with your desired URL
+
+
+
+
+         var myObject = {
+        'itemT': itemsTotal,
+        'nomP': nomP,
+        'quantiteP': quantiteProduit,
+        'taxes': taxes,
+        'est_ship': estimationCost,
+        'orderT': orderTotal
+        };
+
+        window.location.href = '/checkout-cmd?data=' + encodeURIComponent(myObject);
+        */
+       
+        
+   /* });
+   
+    })
+}
+ */
+    
+   
+
+
+</script>
+
+ {% endblock %}

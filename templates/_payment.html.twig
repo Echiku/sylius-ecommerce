@@ -1,0 +1,332 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+  <div>
+
+    <div class="pusher" data-route="sylius_shop_checkout_select_payment">
+        
+        <div class="ui container">
+                    <!-- BEGIN EVENT | event name: "sylius.shop.checkout.header" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "header", template: "@SyliusShop/Checkout/_header.html.twig", priority: 10 -->
+    <div class="ui basic segment">
+        <div class="ui large text menu">
+            <div class="ui small image">
+                                <a href="/fr_FR/">
+                        <img src="/build/shop/images/logo.72a9465e.png">
+                    </a>
+                        </div>
+            <div class="right menu">
+                                <div class="item" id="purchaser-email">Payer en tant que jack@gmail.com.</div>
+                        </div>
+        </div>
+    </div>
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "header" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.checkout.header" -->
+    
+                                                                
+            <!-- BEGIN EVENT | event name: "sylius.shop.layout.before_content" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.layout.before_content" -->
+    
+                <!-- BEGIN EVENT | event name: "sylius.shop.checkout.select_payment.steps, sylius.shop.checkout.steps" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps", template: "@SyliusShop/Checkout/_steps.html.twig", priority: 10 -->
+        
+    
+    
+    <div class="ui four steps">
+        <a class="completed step" href="/fr_FR/checkout/address">
+            <i class="map icon"></i>
+            <div class="content">
+                <div class="title">Adresse</div>
+                <div class="description">Renseignez vos adresses de facturation et de livraison</div>
+            </div>
+        </a>
+            <a class="completed step" href="/fr_FR/checkout/select-shipping">
+            <i class="truck icon"></i>
+            <div class="content">
+                <div class="title">Expédition</div>
+                <div class="description">Choisir comment vos marchandises vont être livrées</div>
+            </div>
+        </a>
+                <a class="active step" href="/fr_FR/checkout/select-payment">
+            <i class="payment icon"></i>
+            <div class="content">
+                <div class="title">Paiement</div>
+                <div class="description">Choisir comment vous allez payer</div>
+            </div>
+        </a>
+           
+    </div>
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.steps", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.steps", block name: "legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.checkout.select_payment.steps, sylius.shop.checkout.steps" -->
+    
+        <div class="ui stackable grid">
+            <div class="eleven wide column">
+                <div class="ui padded segment" id="sylius-payment-methods">
+                    <!-- BEGIN EVENT | event name: "sylius.shop.checkout.select_payment.before_form" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.before_form", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.before_form", block name: "legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.checkout.select_payment.before_form" -->
+    
+                    <form name="sylius_checkout_select_payment" method="post" action="{{path('payment_action')}}" class="ui loadable form" novalidate="novalidate">
+                        
+                        <input type="hidden" name="_method" value="PUT">
+
+                        <input type="hidden" name="amount" id="amount" value="0">
+    
+                        <div class="ui unmargined segments">
+                <div class="ui segment">
+        <div class="ui dividing header">Paiement </div>
+        <div class="ui fluid stackable items">
+            
+    
+                        <div class="item">
+        <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" id="sylius_checkout_select_payment_payments_0_method_0" name="sylius_checkout_select_payment[payments][0][method]" required="required" value="paypal" checked="checked" tabindex="0" class="hidden"><label></label>
+            </div>
+        </div>
+        <div class="content">
+            <a class="header"><label data-test-payment-method-label="" for="sylius_checkout_select_payment_payments_0_method_0" class="required">PayPal Payment</label></a>
+                        <div class="description">
+                    <p>Qui unde eligendi in quod enim molestias.</p>
+                </div>
+                        </div>
+    </div>
+                        <div class="item">
+        <div class="field">
+            
+        </div>
+      
+    </div>
+                </div>
+    </div>
+        </div>
+                        <div class="ui hidden divider"></div>
+    
+                        <!-- BEGIN EVENT | event name: "sylius.shop.checkout.select_payment.before_navigation" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.before_navigation", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.before_navigation", block name: "legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.checkout.select_payment.before_navigation" -->
+                        
+    <div class="ui two column grid">
+       
+        <div class="right aligned column">
+            <button type="submit" id="next-step" class="ui large primary icon labeled button" style="    left: 145px;
+    width: 205px;
+    height: 50px;top:72px">
+
+              <span style="position: absolute;
+    width: 165px;
+    height: 24px;
+    left: 18px;
+    top: 16px;">Payer avec PayPal</span>  
+            </button>
+        </div>
+    </div>
+    
+                        <input type="hidden" id="sylius_checkout_select_payment__token" name="sylius_checkout_select_payment[_token]" value="2dbb2cca9d487a919.8LSdLNsq_WchvU7KQZyuDxX76u6cJB07gAeGiWIpFHg.n-GrFb5phDcMhQWyLPGYWHLIiJbkF0ICxSrLwgNlexKR2NYctUSOAHHkPQ">
+                    </form>
+                </div>
+            </div>
+            <div class="five wide column">
+                <!-- BEGIN EVENT | event name: "sylius.shop.checkout.select_payment.sidebar, sylius.shop.checkout.sidebar" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "before_summary_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "before_summary_legacy" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "before_support_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "before_support_legacy" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "after_support_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.select_payment.sidebar", block name: "after_support_legacy" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "summary", template: "@SyliusShop/Checkout/_summary.html.twig", priority: 20 -->
+    
+    
+    <div class="ui segment">
+
+        <table class="ui very basic table" id="sylius-checkout-subtotal">
+            <thead>
+            <tr>
+                <th class="sylius-table-column-item">Élément</th>
+                <th class="sylius-table-column-qty">Qté</th>
+                <th class="sylius-table-column-subtotal">Sous-total</th>
+            </tr>
+            </thead>
+            <tbody>
+                        <tr>
+                    <td id="nom">Oversize white cotton T-Shirt</td>
+                    <td class="center aligned" id="quantite">
+                        1
+                    </td>
+                    <td class="right aligned" id="sylius-item-oversize-white-cotton-t-shirt-subtotal">
+                        97,82&nbsp;$US
+                    </td>
+                </tr>
+                    </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="1" style="border-top: 2px solid #ddd;">
+                        <strong>Total:</strong>
+                    </td>
+                    <td colspan="2" id="sylius-summary-items-subtotal" class="right aligned" style="border-top: 2px solid #ddd;">
+                        97,82&nbsp;$US
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="1">
+                        <strong>Total des taxes:</strong>
+                    </td>
+                    <td colspan="2" class="right aligned">
+                                                <div id="sylius-summary-tax-none">0,00&nbsp;$US</div>
+                                                                                </td>
+                </tr>
+                <tr>
+                    <td colspan="1">
+                        <strong>Réduction:</strong>
+                    </td>
+                    <td colspan="2" id="sylius-summary-promotion-total" class="right aligned">
+                        0,00&nbsp;$US
+                    </td>
+                </tr>
+                                <tr>
+                        <td colspan="1">
+                            <strong>Estimation des frais de livraison:</strong>
+                        </td>
+                        <td colspan="2" class="right aligned">
+                                                    <span id="sylius-summary-shipping-total">3,27&nbsp;$US</span>
+                        </td>
+                    </tr>
+                            <tr class="ui large header">
+                    <td colspan="1">
+                        <strong>Total de la commande:</strong>
+                    </td>
+                    <td colspan="2" id="sylius-summary-grand-total" class="right aligned">
+                        101,09&nbsp;$US
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </div>
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "summary" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "support", template: "@SyliusShop/Checkout/_support.html.twig", priority: 10 -->
+        <h2 class="ui center aligned icon header">
+            <i class="circular phone icon"></i>
+            +41 123 456 789
+            <span class="sub header">
+                Besoin d'aide? Appelez-nous&nbsp;!
+            </span>
+        </h2>
+    
+    <div class="ui divider"></div>
+    
+    <div class="ui center aligned basic segment">
+        <i class="huge cc mastercard icon"></i>
+        <i class="huge cc visa icon"></i>
+        <i class="huge cc paypal card icon"></i>
+    </div>
+    
+    <!-- END BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "support" -->
+    <!-- END EVENT | event name: "sylius.shop.checkout.select_payment.sidebar, sylius.shop.checkout.sidebar" -->
+            </div>
+        </div>
+    
+            <!-- BEGIN EVENT | event name: "sylius.shop.layout.after_content" -->
+    <!-- BEGIN BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+    
+    
+    <!-- END BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy" -->
+    <!-- END EVENT | event name: "sylius.shop.layout.after_content" -->
+        </div>
+    
+        </div>
+</div>
+<style>
+    .ui small image
+{ 
+    display: none;
+}
+header
+{
+    display:none;
+}
+</style>
+
+<script>
+
+    // Given URL
+const url=window.location.href
+// Create an anchor element to parse the URL
+// Sample URL
+
+
+const dataAfterPaymentPage = url.split(window.location.origin+"/payment-page/")[1];
+
+console.log(dataAfterPaymentPage);
+
+
+// Decode the URL-encoded data
+const decodedData = decodeURIComponent(dataAfterPaymentPage);
+
+// Parse the JSON data
+const jsonData = JSON.parse(decodedData);
+
+// Access individual values
+const itemT = jsonData.itemT;
+const nomP = jsonData.nomP;
+const quantiteP = jsonData.quantiteP;
+const est_ship = jsonData.est_ship;
+const orderT = jsonData.orderT;
+
+console.log("itemT:", itemT);
+console.log("nomP:", nomP);
+console.log("quantiteP:", quantiteP);
+console.log("est_ship:", est_ship);
+console.log("orderT:", orderT);
+
+document.getElementById('nom').textContent=nomP
+
+document.getElementById('quantite').textContent=quantiteP
+
+document.getElementById('sylius-item-oversize-white-cotton-t-shirt-subtotal').textContent=itemT
+
+
+document.getElementById('sylius-summary-shipping-total').textContent=est_ship
+
+document.getElementById('sylius-summary-grand-total').textContent=orderT
+
+document.getElementById('amount').value=orderT
+
+
+
+
+
+</script>
+
+{% endblock %}

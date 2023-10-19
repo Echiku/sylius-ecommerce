@@ -1,0 +1,9 @@
+{# templates/admin/ProductWithImages/grid/actions.html.twig #}
+
+<div class="image-grid">
+    {% for datas in data %}
+        <div class="image-item">
+            <img class="ui small bordered image " style="left:71px;"  src="{{ asset('/media/image/'~ datas.path) }}">
+        </div>
+    {% endfor %}
+</div>

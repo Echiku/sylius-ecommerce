@@ -1,0 +1,154 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+  <div>
+
+
+<div class="ui container">
+                <!-- BEGIN EVENT | event name: "sylius.shop.checkout.header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "header", template: "@SyliusShop/Checkout/_header.html.twig", priority: 10 -->
+<div class="ui basic segment">
+    <div class="ui large text menu">
+        <div class="ui small image">
+                            <a href="/fr_FR/">
+                    <img src="/build/shop/images/logo.72a9465e.png">
+                </a>
+                    </div>
+        <div class="right menu">
+                    </div>
+    </div>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.header" -->
+
+                                                            
+        <!-- BEGIN EVENT | event name: "sylius.shop.layout.before_content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.layout.before_content" -->
+
+            <!-- BEGIN EVENT | event name: "sylius.shop.checkout.complete.steps, sylius.shop.checkout.steps" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps", template: "@SyliusShop/Checkout/_steps.html.twig", priority: 10 -->
+    
+
+
+<div class="ui four steps">
+    <a class="completed step" href="/fr_FR/checkout/address">
+        <i class="map icon"></i>
+        <div class="content">
+            <div class="title">Adresse</div>
+            <div class="description">Renseignez vos adresses de facturation et de livraison</div>
+        </div>
+    </a>
+        <a class="completed step" href="/fr_FR/checkout/select-shipping">
+        <i class="truck icon"></i>
+        <div class="content">
+            <div class="title">Expédition</div>
+            <div class="description">Choisir comment vos marchandises vont être livrées</div>
+        </div>
+    </a>
+            <a class="completed step" href="/fr_FR/checkout/select-payment">
+        <i class="payment icon"></i>
+        <div class="content">
+            <div class="title">Paiement</div>
+            <div class="description">Choisir comment vous allez payer</div>
+        </div>
+    </a>
+        <div class="active step" href="/fr_FR/checkout/complete">
+        <i class="checkered flag icon"></i>
+        <div class="content">
+            <div class="title">Terminer</div>
+            <div class="description">Paiement effectué avec PayPal</div>
+        </div>
+    </div>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.complete.steps", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.steps", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.complete.steps, sylius.shop.checkout.steps" -->
+
+    <div class="ui padded segment">
+        
+
+
+        <!-- BEGIN EVENT | event name: "sylius.shop.checkout.complete.after_content_header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.complete.after_content_header", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.after_content_header", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.complete.after_content_header" -->
+
+     
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.summary", block name: "before_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.complete.summary", block name: "content", template: "@SyliusShop/Common/Order/_summary.html.twig", priority: 10 -->
+<div class="ui segment">
+    
+</div>
+
+
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.summary", block name: "content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.complete.summary", block name: "after_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.summary", block name: "after_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.complete.summary" -->
+
+            <div class="ui hidden divider"></div>
+            <div class="field">
+            <label for="sylius_checkout_complete_notes" style="position: absolute;
+    left: 642px;
+    top: 10px;">Message</label><textarea id="sylius_checkout_complete_notes" name="sylius_checkout_complete[notes]" style="position: absolute;width: 487px; height: 46px; border: none;left: 432px; resize:none;">{{message}}</textarea></div>
+
+            <!-- BEGIN EVENT | event name: "sylius.shop.checkout.complete.before_navigation" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.complete.before_navigation", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.complete.before_navigation", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.complete.before_navigation" -->
+<a href="/produits">
+<button type="submit" class="ui huge primary fluid icon labeled button" style="    width: 136px;
+    left: 596px; top: 98px;">
+    <i class="check icon"></i> Retour
+</button>
+</a>
+
+        
+    </div>
+
+        <!-- BEGIN EVENT | event name: "sylius.shop.layout.after_content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.layout.after_content" 
+-->
+    </div>
+
+
+</div>
+
+<style>
+    header
+    {
+        display: none;
+    }
+</style>
+
+{% endblock %}

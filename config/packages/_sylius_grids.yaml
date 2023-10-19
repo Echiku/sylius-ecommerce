@@ -1,0 +1,76 @@
+imports:
+    - { resource: "@SyliusCoreBundle/Resources/config/app/config.yml" }
+
+    - { resource: "@SyliusAdminBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusApiBundle/Resources/config/app/config.yaml" }
+
+    - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
+    - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
+
+    
+sylius_grid:
+    grids:
+        app_admin_produit:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: App\Entity\Produit
+            
+
+            fields:
+               
+                nom:
+                    type: string
+                    label: Nom
+                description:
+                    type: string
+                    label: Description
+                prix:
+                    type: string
+                    label: Prix
+                categorie:
+                    type: string
+                    label: Categorie
+                image:
+                    type: twig  # Use the 'twig' field type
+                    label: Image
+                    options:
+                        template: "_produitImage.html.twig"
+            filters:
+                categorie:
+                    type: string  # Specify the filter type
+                    label: Categorie  # Label for the filter
+                    options:
+                        field: categorie  # The field name in the entity
+                        filter: contains  # Define the filter type (e.g., 'contains' for a partial match)
+
+            actions:
+                main:
+                    create:
+                        type: create
+                item:
+                    update:
+                        type: update
+                    delete:
+                        type: delete
+
+
+        app_admin_order_produit:
+            driver:
+                name: doctrine/orm
+                options:
+                    class: App\Entity\OrderProduit
+            
+
+            fields:
+               
+                itemsTotal:
+                    type: string
+                    label: Nom
+                
+           
+            actions:
+                main:
+                    read:
+                        type: read
+                

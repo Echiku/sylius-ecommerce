@@ -1,0 +1,342 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+  <div>
+    <div class="ui container">
+        <!-- BEGIN EVENT | event name: "sylius.shop.checkout.header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "before_header_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "header", template: "@SyliusShop/Checkout/_header.html.twig", priority: 10 -->
+<div class="ui basic segment">
+<div class="ui large text menu">
+<div class="ui small image">
+                    <a href="/fr_FR/">
+            <img src="/build/shop/images/logo.72a9465e.png">
+        </a>
+            </div>
+<div class="right menu">
+                    <a href="/fr_FR/login" class="item">Sign in</a>
+            </div>
+</div>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.header", block name: "after_header_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.header" -->
+
+                                                    
+<!-- BEGIN EVENT | event name: "sylius.shop.layout.before_content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.layout.before_content", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.layout.before_content" -->
+
+    <!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.steps, sylius.shop.checkout.steps" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps", template: "@SyliusShop/Checkout/_steps.html.twig", priority: 10 -->
+
+
+
+<div class="ui four steps">
+<a class="active step" href="/fr_FR/checkout/address">
+<i class="map icon"></i>
+<div class="content">
+    <div class="title">Address</div>
+    <div class="description">Fill in your billing and shipping addresses</div>
+</div>
+</a>
+<a class="disabled step" href="/fr_FR/checkout/select-shipping">
+<i class="truck icon"></i>
+<div class="content">
+    <div class="title">Shipping</div>
+    <div class="description">Choose how your goods will be delivered</div>
+</div>
+</a>
+    <a class="disabled step" href="/fr_FR/checkout/select-payment">
+<i class="payment icon"></i>
+<div class="content">
+    <div class="title">Payment</div>
+    <div class="description">Choose how you will pay</div>
+</div>
+</a>
+<div class="disabled step" href="/fr_FR/checkout/complete">
+<i class="checkered flag icon"></i>
+<div class="content">
+    <div class="title">Complete</div>
+    <div class="description">Review and confirm your order</div>
+</div>
+</div>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.steps", block name: "steps" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.steps", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.steps", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.steps, sylius.shop.checkout.steps" -->
+
+<div class="ui stackable grid">
+<div class="eleven wide column">
+    <div class="ui segment">
+        <!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.before_form" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.before_form", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.before_form", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.before_form" -->
+
+        <form name="sylius_checkout_address" method="post" action="{{path('adr_bill',{'data':order|serialize})}}" class="ui loadable form" novalidate="novalidate">
+            
+            <input type="hidden" name="_method" value="PUT">
+
+            
+<div id="sylius-billing-address">
+<h3 class="ui dividing header">Billing address</h3>
+    <div class="one field" id="sylius-api-login">
+<div class="required field"><label for="sylius_checkout_address_customer_email" class="required">Email</label><input type="email" id="sylius_checkout_address_customer_email" name="sylius_checkout_address[customer][email]" required="required" data-url="/fr_FR/ajax/users/check"></div>
+
+<div class="ui action input" id="sylius-api-login-form" style="display: none;">
+<input type="password" placeholder="Password">
+<input type="hidden" name="_csrf_shop_security_token" value="78ea325a201b9e100.kPwZIi7_KnxDgB0RKwrU0GsJGrRTiNm_pxQmdsJZYbw.859JfVSzWAoCsm48TWObtSpmUMEh0uzQ4WNuPqR0NvLFzSpIF8lBHxzyeg">
+<a class="ui blue button" href="#" id="sylius-api-login-submit" data-url="/fr_FR/login-check">
+    Sign in
+</a>
+</div>
+<div class="ui red fluid top pointing basic label hidden sylius-validation-error" id="sylius-api-validation-error">
+</div>
+</div>
+    
+<div class="two fields">
+<div class="required field"><label for="sylius_checkout_address_billingAddress_firstName" class="required">First name</label><input type="text" id="sylius_checkout_address_billingAddress_firstName" name="sylius_checkout_address[billingAddress][firstName]" required="required"></div>
+<div class="required field"><label for="sylius_checkout_address_billingAddress_lastName" class="required">Last name</label><input type="text" id="sylius_checkout_address_billingAddress_lastName" name="sylius_checkout_address[billingAddress][lastName]" required="required"></div>
+</div>
+<div class="field"><label for="sylius_checkout_address_billingAddress_company">Company</label><input type="text" id="sylius_checkout_address_billingAddress_company" name="sylius_checkout_address[billingAddress][company]"></div>
+<div class="required field"><label for="sylius_checkout_address_billingAddress_street" class="required">Street address</label><input type="text" id="sylius_checkout_address_billingAddress_street" name="sylius_checkout_address[billingAddress][street]" required="required"></div>
+
+<div class="required field"><label for="sylius_checkout_address_billingAddress_countryCode" class="required">Country</label><select id="sylius_checkout_address_billingAddress_countryCode" name="sylius_checkout_address[billingAddress][countryCode]" required="required" class=" ui dropdown"><option value="" selected="selected">Select</option><option value="AU">Australia</option><option value="CA">Canada</option><option value="CN">China</option><option value="FR">France</option><option value="DE">Germany</option><option value="MX">Mexico</option><option value="NZ">New Zealand</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="ES">Spain</option><option value="GB">United Kingdom</option><option value="US">United States</option></select></div>
+
+<div class="province-container field" data-url="/fr_FR/ajax/render-province-form">
+</div>
+
+
+<div class="two fields">
+<div class="required field"><label for="sylius_checkout_address_billingAddress_city" class="required">City</label><input type="text" id="sylius_checkout_address_billingAddress_city" name="sylius_checkout_address[billingAddress][city]" required="required"></div>
+<div class="required field"><label for="sylius_checkout_address_billingAddress_postcode" class="required">Postcode</label><input type="text" id="sylius_checkout_address_billingAddress_postcode" name="sylius_checkout_address[billingAddress][postcode]" required="required"></div>
+</div>
+<div class="field"><label for="sylius_checkout_address_billingAddress_phoneNumber">Phone number</label><input type="text" id="sylius_checkout_address_billingAddress_phoneNumber" name="sylius_checkout_address[billingAddress][phoneNumber]"></div>
+<div class="field">
+<div class="ui toggle checkbox"><input type="checkbox" id="sylius_checkout_address_differentShippingAddress" name="sylius_checkout_address[differentShippingAddress]" data-toggles="sylius-shipping-address" value="1" tabindex="0" class="hidden"><label data-test-different-shipping-address-label="" for="sylius_checkout_address_differentShippingAddress">Use different address for shipping?</label></div>
+</div>
+
+<!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.billing_address_form" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.billing_address_form", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.billing_address_form", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.billing_address_form" -->
+</div>
+
+<div id="sylius-shipping-address" style="display: none;">
+<div class="ui hidden divider"></div>
+<h3 class="ui dividing header">Shipping address</h3>
+
+<div class="two fields">
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_firstName" class="required">First name</label><input type="text" id="sylius_checkout_address_shippingAddress_firstName" name="sylius_checkout_address[shippingAddress][firstName]" required="required"></div>
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_lastName" class="required">Last name</label><input type="text" id="sylius_checkout_address_shippingAddress_lastName" name="sylius_checkout_address[shippingAddress][lastName]" required="required"></div>
+</div>
+<div class="field"><label for="sylius_checkout_address_shippingAddress_company">Company</label><input type="text" id="sylius_checkout_address_shippingAddress_company" name="sylius_checkout_address[shippingAddress][company]"></div>
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_street" class="required">Street address</label><input type="text" id="sylius_checkout_address_shippingAddress_street" name="sylius_checkout_address[shippingAddress][street]" required="required"></div>
+
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_countryCode" class="required">Country</label><select id="sylius_checkout_address_shippingAddress_countryCode" name="sylius_checkout_address[shippingAddress][countryCode]" required="required" class=" ui dropdown"><option value="" selected="selected">Select</option><option value="AU">Australia</option><option value="CA">Canada</option><option value="CN">China</option><option value="FR">France</option><option value="DE">Germany</option><option value="MX">Mexico</option><option value="NZ">New Zealand</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="ES">Spain</option><option value="GB">United Kingdom</option><option value="US">United States</option></select></div>
+
+<div class="province-container field" data-url="/fr_FR/ajax/render-province-form">
+</div>
+
+
+<div class="two fields">
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_city" class="required">City</label><input type="text" id="sylius_checkout_address_shippingAddress_city" name="sylius_checkout_address[shippingAddress][city]" required="required"></div>
+<div class="required field"><label for="sylius_checkout_address_shippingAddress_postcode" class="required">Postcode</label><input type="text" id="sylius_checkout_address_shippingAddress_postcode" name="sylius_checkout_address[shippingAddress][postcode]" required="required"></div>
+</div>
+<div class="field"><label for="sylius_checkout_address_shippingAddress_phoneNumber">Phone number</label><input type="text" id="sylius_checkout_address_shippingAddress_phoneNumber" name="sylius_checkout_address[shippingAddress][phoneNumber]"></div>
+
+<!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.shipping_address_form" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.shipping_address_form", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.shipping_address_form", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.shipping_address_form" -->
+</div>
+            <div class="ui hidden divider"></div>
+
+            <!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.before_navigation" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.before_navigation", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.before_navigation", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.before_navigation" -->
+
+            <div class="ui two column grid">
+<div class="column">
+<a href="/fr_FR/" class="ui large icon labeled button"><i class="arrow left icon"></i> Back to store</a>
+</div>
+<div class="right aligned column">
+<button type="submit" id="next-step" class="ui large primary icon labeled button"><i class="arrow right icon"></i> Next</button>
+</div>
+</div>
+
+            <input type="hidden" id="sylius_checkout_address__token" name="sylius_checkout_address[_token]" value="4fff9290f7ba005e7dbb49a4857824b8.P02C3JA8uf0zU6ikAAZcwibBDglN7GKKTD1JH6covtk.XH3x7ah64ZhrFv7QX2BvmnyMOUU_o1rzOkkNe-BtibMIJMap-ASJpXgMyw">
+        </form>
+    </div>
+</div>
+<div class="five wide column">
+    <!-- BEGIN EVENT | event name: "sylius.shop.checkout.address.sidebar, sylius.shop.checkout.sidebar" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "before_summary_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "before_summary_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "before_support_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "before_support_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "after_support_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.address.sidebar", block name: "after_support_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "summary", template: "@SyliusShop/Checkout/_summary.html.twig", priority: 20 -->
+
+
+<div class="ui segment">
+<table class="ui very basic table" id="sylius-checkout-subtotal">
+<thead>
+<tr>
+    <th class="sylius-table-column-item">Item</th>
+    <th class="sylius-table-column-qty">Qty</th>
+    <th class="sylius-table-column-subtotal">Subtotal</th>
+</tr>
+</thead>
+<tbody>
+            <tr>
+        <td>{{order.nomP}}</td>
+        <td class="center aligned">
+            {{order.quantiteP}}
+        </td>
+        <td class="right aligned" id="sylius-item-knitted-wool-blend-green-cap-subtotal">
+            {{order.itemT}}
+        </td>
+    </tr>
+        </tbody>
+<tfoot>
+    <tr>
+        <td colspan="1" style="border-top: 2px solid #ddd;">
+            <strong>Items total:</strong>
+        </td>
+        <td colspan="2" id="sylius-summary-items-subtotal" class="right aligned" style="border-top: 2px solid #ddd;">
+            {{order.itemT}}
+        </td>
+    </tr>
+    <tr class="tax-disabled">
+        <td colspan="1">
+            <strong>Taxes total:</strong>
+        </td>
+        <td colspan="2" class="right aligned">
+                                                                            <div class="tax-disabled">
+                    <span id="sylius-summary-tax-included">{{order.taxes}}</span>
+                    <div><small>(Included in price)</small></div>
+                </div>
+                            </td>
+    </tr>
+    <tr>
+        <td colspan="1">
+            <strong>Discount:</strong>
+        </td>
+        <td colspan="2" id="sylius-summary-promotion-total" class="right aligned">
+           0.00
+        </td>
+    </tr>
+                    <tr>
+            <td colspan="1">
+                <strong>Estimated shipping cost:</strong>
+            </td>
+            <td colspan="2" class="right aligned">
+                                        <span id="sylius-summary-shipping-total">{{order.est_ship}}</span>
+            </td>
+        </tr>
+                <tr class="ui large header">
+        <td colspan="1">
+            <strong>Order total:</strong>
+        </td>
+        <td colspan="2" id="sylius-summary-grand-total" class="right aligned">
+           {{order.orderT}}
+        </td>
+    </tr>
+</tfoot>
+</table>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "summary" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "support", template: "@SyliusShop/Checkout/_support.html.twig", priority: 10 -->
+<h2 class="ui center aligned icon header">
+<i class="circular phone icon"></i>
++41 123 456 789
+<span class="sub header">
+    Need assistance? Call us!
+</span>
+</h2>
+
+<div class="ui divider"></div>
+
+<div class="ui center aligned basic segment">
+<i class="huge cc mastercard icon"></i>
+<i class="huge cc visa icon"></i>
+<i class="huge cc paypal card icon"></i>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.checkout.sidebar", block name: "support" -->
+<!-- END EVENT | event name: "sylius.shop.checkout.address.sidebar, sylius.shop.checkout.sidebar" -->
+</div>
+</div>
+
+<!-- BEGIN EVENT | event name: "sylius.shop.layout.after_content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.layout.after_content", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.layout.after_content" -->
+    </div>
+  </div>
+
+<style>
+.ui small image
+{ 
+    display: none;
+}
+header
+{
+    display:none;
+}
+
+</style>
+
+  <script>
+  
+    var urlParams = new URLSearchParams(window.location.search);
+
+    var datas = urlParams.get('data');
+
+    var currentURL = window.location.origin;
+
+    var newURL = currentURL +'/fr_FR/adr-bill/'
+
+
+    history.replaceState(null, null, newURL);
+
+
+  
+  
+  </script>
+{% endblock %}

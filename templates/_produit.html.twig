@@ -1,0 +1,49 @@
+{# templates/bundles/SyliusAdminBundle/product/index.html.twig #}
+
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+
+ <div>
+   
+    <h2 class="ui center aligned huge header">Produit List</h2>
+
+  
+    <div class="ui hidden divider"></div>
+ 
+
+    <div>
+        <div class="ui three odd doubling cards">
+        {% for produit in produits %}
+        <div class="ui fluid card">
+        <a href="/produits/{{produit.id}}" class="blurring dimmable image dimmed">
+            <div class="ui dimmer transition animating fade in" style="display: flex !important; animation-duration: 500ms;">
+                <div class="content">
+                    <div class="center">
+                        <div class="ui inverted button">View more</div>
+                    </div>
+                </div>
+            </div>
+                
+    <img src="{{asset('/media/image/'~ produit.image)}}" alt="330M slim fit jeans" class="ui bordered image">
+        </a>
+        <div class="content">
+            <a href="/produits/{{produit.id}}" class="header sylius-product-name">{{produit.nom}}</a>
+
+                                                            
+                <div id="appliedPromotions" data-applied-promotions-locale="fr_FR">
+        </div>
+
+                            <div class="sylius-product-price">${{produit.prix}}</div>
+                </div>
+    </div>
+        {% endfor %}
+    </div>
+    </div>
+
+    
+ 
+ </div>
+
+{% endblock %}
+

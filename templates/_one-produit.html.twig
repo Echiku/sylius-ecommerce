@@ -1,0 +1,203 @@
+{# templates/bundles/SyliusAdminBundle/product/index.html.twig #}
+
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+
+ <div>
+   
+    <h2 class="ui center aligned huge header">Details Produits</h2>
+
+  
+    <div class="ui hidden divider"></div>
+ 
+          <div class="ui two column stackable grid">
+    <div class="column">
+        <!-- BEGIN EVENT | event name: "sylius.shop.product.show.left_sidebar" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "before_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "before_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "content", template: "@SyliusShop/Product/Show/_images.html.twig", priority: 10 -->
+            
+<div></div>
+<a href="" class="ui fluid image" data-lightbox="sylius-product-image">
+    <img src="{{asset('/media/image/'~ produit.image)}}" id="main-image" alt="vet">
+</a>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "content" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "after_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.left_sidebar", block name: "after_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.product.show.left_sidebar" -->
+    </div>
+    <div class="column">
+        <!-- BEGIN EVENT | event name: "sylius.shop.product.show.right_sidebar" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "header", template: "@SyliusShop/Product/Show/_header.html.twig", priority: 50 -->
+<h1 id="sylius-product-name" class="ui monster dividing header">{{produit.nom}}</h1>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "header" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_product_header_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 45 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_product_header_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "reviews", template: "@SyliusShop/Product/Show/_reviews.html.twig", priority: 40 -->
+<div class="ui text menu">
+    <div class="item">
+        <div id="average-rating" class="ui star large rating" data-rating="0" data-max-rating="5" data-average-rating="0" style="pointer-events: none;"><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i><i class="icon"></i></div>
+    </div>
+    <a href="/fr_FR/products/330m-slim-fit-jeans/reviews/" class="item">0 Reviews</a>
+    <a href="/fr_FR/products/330m-slim-fit-jeans/reviews/new" class="item">Add your review</a>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "reviews" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_reviews_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 35 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_reviews_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "price_widget", template: "@SyliusShop/Product/Show/_priceWidget.html.twig", priority: 30 -->
+
+        <div id="appliedPromotions" data-applied-promotions-locale="fr_FR">
+    </div>
+
+<div class="ui stackable grid">
+    <div class="seven wide column">
+                    
+
+<span class="ui header" id="product-original-price" style="display: none;">
+    </span>
+
+<span class="ui huge header" id="product-price">
+    ${{produit.prix}}
+</span>
+            </div>
+    <div class="nine wide right aligned column">
+        <span class="ui sub header">{{produit.nom}}</span>
+    </div>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "price_widget" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_price_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 25 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_price_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "short_description", template: "@SyliusShop/Product/Show/_shortDescription.html.twig", priority: 20 -->
+<div class="ui basic segment">
+    <p>Voluptate est natus dolorem modi eum. Quisquam repellat voluptas architecto atque. Aspernatur delectus alias sed quae repudiandae aut unde.</p>
+</div>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "short_description" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_description_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 15 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_description_legacy" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "variant_selection", template: "@SyliusShop/Product/Show/_variantSelection.html.twig", priority: 10 -->
+    
+<div id="sylius-variants-pricing" data-unavailable-text="Unavailable">
+            <div data-jeans_size="jeans_size_s" data-value="$24.62"></div>
+            <div data-jeans_size="jeans_size_m" data-value="$49.68"></div>
+            <div data-jeans_size="jeans_size_l" data-value="$89.07"></div>
+            <div data-jeans_size="jeans_size_xl" data-value="$9.74"></div>
+            <div data-jeans_size="jeans_size_xxl" data-value="$97.19"></div>
+</div>
+
+    
+
+<div class="ui segment" id="sylius-product-selecting-variant">
+    <!-- BEGIN EVENT | event name: "sylius.shop.product.show.before_add_to_cart" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.before_add_to_cart", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.before_add_to_cart", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.product.show.before_add_to_cart" -->
+
+    <form name="sylius_add_to_cart" method="post" action="" id="sylius-product-adding-to-cart" class="ui loadable form" novalidate="novalidate" autocomplete="off" data-redirect="/fr_FR/cart/">
+    
+    <div class="ui red label bottom pointing hidden sylius-validation-error" id="sylius-cart-validation-error"></div>
+                            <div class="required field"><label for="sylius_add_to_cart_cartItem_variant_jeans_size" class="required">Jeans size</label><select id="sylius_add_to_cart_cartItem_variant_jeans_size" name="sylius_add_to_cart[cartItem][variant][jeans_size]" data-option="jeans_size" class=" ui dropdown"><option value="jeans_size_s" selected="selected">S</option><option value="jeans_size_m">M</option><option value="jeans_size_l">L</option><option value="jeans_size_xl">XL</option><option value="jeans_size_xxl">XXL</option></select></div>
+                <div class="required field"><label for="sylius_add_to_cart_cartItem_quantity" class="required">Quantity</label><input type="number" id="sylius_add_to_cart_cartItem_quantity" name="sylius_add_to_cart[cartItem][quantity]" required="required" min="1" value="1"></div>
+
+    <!-- BEGIN EVENT | event name: "sylius.shop.product.show.add_to_cart_form" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.add_to_cart_form", block name: "legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 0 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.add_to_cart_form", block name: "legacy" -->
+<!-- END EVENT | event name: "sylius.shop.product.show.add_to_cart_form" -->
+
+    <button type="submit" class="ui huge primary icon labeled button"><i class="cart icon"></i> Add to cart</button>
+    <input type="hidden" id="sylius_add_to_cart__token" name="sylius_add_to_cart[_token]" value="941036.RccwpbtTYaVLvyW38gmijC9JsvHjkEeYLrJd2DuF7PE.P_B-6fRrA9wd13z4m0fmy04ZgqiVp3bUfdkWvFX8tsMTg0jy6RJT7AXVQg">
+    </form>
+</div>
+
+
+<div class="ui hidden divider"></div>
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "variant_selection" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "pay_with_pay_pal", template: "@SyliusPayPalPlugin/Buttons/productDetails.html.twig", priority: 7 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "pay_with_pay_pal" -->
+<!-- BEGIN BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_add_to_cart_legacy", template: "@SyliusUi/Block/_legacySonataEvent.html.twig", priority: 5 -->
+
+
+<!-- END BLOCK | event name: "sylius.shop.product.show.right_sidebar", block name: "after_add_to_cart_legacy" -->
+<!-- END EVENT | event name: "sylius.shop.product.show.right_sidebar" -->
+    </div>
+</div>
+   
+    </div>
+    </div>
+
+    
+ 
+ </div>
+
+ <script>
+
+    var idProduit="{{idProduit}}"
+
+    
+ 
+    document.getElementById('sylius-product-adding-to-cart').addEventListener('submit', function (e) {
+        e.preventDefault();
+        
+        const formData = new FormData(e.target);
+        const formDataObject = {};
+        
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        formDataObject['idProduit']=idProduit
+        
+        fetch('/add-to-cart/'+idProduit, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formDataObject),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(JSON.stringify(data),'here');
+            // Handle the response
+            var datas=JSON.stringify(data)
+
+            window.location.href = '/show-cart?data=' + encodeURIComponent(datas);
+
+
+        })
+        .catch(error => {
+            console.error(error);
+            // Handle errors
+        });
+    });
+ 
+   
+
+
+ </script>
+
+{% endblock %}
+

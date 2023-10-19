@@ -1,0 +1,135 @@
+sylius_paypal_webhook:
+    resource: "@SyliusPayPalPlugin/Resources/config/webhook_routing.yaml"
+
+
+# config/routes.yaml
+
+
+
+app_admin_produit:
+    resource: |
+        alias: app.produit
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        redirect: index
+        grid: app_admin_produit
+        vars:
+            all:
+                subheader: app.ui.produit
+            index:
+                icon: 'file image outline'
+    type: sylius.resource
+    prefix: /admin
+
+
+
+
+
+
+
+
+
+app_admin_imageProduit:
+    resource: |
+        alias: app.imageProduit
+        section: admin
+        templates: "@SyliusAdmin\\Crud"
+        grid: app_admin_imageProduit
+        redirect: index
+    type: sylius.resource
+    prefix: admin
+
+
+
+#app_admin_produits:
+ #   path: /admin/produits
+ #   methods: [GET]
+#    defaults:
+#        _controller: app.controller.produit::listProduit
+
+produit_list:
+    path: /produits
+    controller: App\Controller\ProduitActionController::listProduit
+
+one_produit:
+    path: /produits/{id}
+    controller: App\Controller\ProduitActionController::oneProduit
+
+
+
+cart_add:
+    path: /add-to-cart/{id}
+    controller: App\Controller\CartController::addToCart 
+
+show_cart:
+    path: /show-cart/
+    controller: App\Controller\CartController::showCart
+
+order_cmd:
+    path: /createOrder/
+    methods: [POST]
+    controller: App\Controller\CartController::createOrder
+
+
+checkout_cmd:
+    path: /checkout-cmd/
+    methods: [GET]
+    controller: App\Controller\CartController::checkOut
+
+adr_bill:
+    path: /fr_FR/adr-bill/
+    methods: [GET,POST,PUT]
+
+    controller: App\Controller\CartController::adrBill
+
+adr_bill_submit:
+    path: /fr_FR/adr-bill-submit/
+    methods: [GET,POST,PUT]
+
+    controller: App\Controller\CartController::adrBill
+
+
+
+shipping_cmd:
+    path: /fr_FR/shipping-cmd/
+    methods: [GET,POST,PUT]
+    controller: App\Controller\CartController::shipping
+
+shipping_cmd_submit:
+    path: /fr_FR/shipping-submit/
+    methods: [GET,POST,PUT]
+    controller: App\Controller\CartController::shipping
+
+
+
+payment_page:
+    path: /payment-page/{param}
+    methods: [GET,POST,PUT]
+    controller: App\Controller\CartController::payment
+
+payment_action:
+    path: /payment-action
+    methods: [POST,PUT]
+    controller: App\Controller\OperationController::paymentAction
+
+
+success_page:
+    path: /success/
+    methods: [GET,POST]
+    controller: App\Controller\OperationController::success
+
+success_pg:
+    path: /success-pg/
+    methods: [GET]
+    controller: App\Controller\OperationController::successpg
+
+
+error_page:
+    path: /error/
+    methods: [GET,POST]
+    controller: App\Controller\OperationController::error
+
+
+
+
+
