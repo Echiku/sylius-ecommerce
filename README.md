@@ -100,3 +100,7 @@ Sylius is completely free and released under the [MIT License](https://github.co
 Sylius was originally created by [Paweł Jędrzejewski](http://pjedrzejewski.com).
 See the list of [contributors from our awesome community](https://github.com/Sylius/Sylius/contributors).
 # sylius-ecommerce
+
+Pour le paiement avec PayPal veuillez utiliser ces identifiants: Username=sb-e7hrb21625393@business.example.com
+
+Password=532o@OR/
